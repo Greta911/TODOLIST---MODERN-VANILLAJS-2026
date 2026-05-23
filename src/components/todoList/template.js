@@ -23,7 +23,7 @@ export default function getTemplate(todolist) {
         </ul>
       </main>
       <footer class="footer">
-        <span class="todo-count"></span>
+        <span class="todo-count"><strong></strong> item(s) left</span>
         <ul class="filters">
           <li>
             <a href="#/" class="selected">All</a>
