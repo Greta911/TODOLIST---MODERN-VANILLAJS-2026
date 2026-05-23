@@ -10,12 +10,12 @@ export default class Todo {
     this.createdAt = data.createdAt;
     this.domElt = null;
   }
-  render (el) {
+  render () {
     const template = document.createElement('template');
     template.innerHTML = getTemplate(this);
     this.domElt = template.content.firstElementChild;
     this.initEvents();
-    el.append(this.domElt);
+    return this.domElt;
   }
 
   //Modifier un élément
@@ -29,6 +29,8 @@ export default class Todo {
     return await DB.updateOne(this);
   }
 
+
+  //Modifier un élément
   async update(data) {
     this.content = data;
     this.domElt.querySelector('label').innerText = this.content;
