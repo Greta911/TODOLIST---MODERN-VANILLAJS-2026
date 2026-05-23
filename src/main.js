@@ -1,5 +1,5 @@
 //Model de la base de données ou API
-
+import './styles.css';
 import TodoList from "./components/todoList/TodoList";
 
 
