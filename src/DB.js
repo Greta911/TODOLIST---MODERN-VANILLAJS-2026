@@ -28,8 +28,14 @@ export default class DB {
       body: JSON.stringify({
         content: todo.content,
         completed: todo.completed,
-        createdAt: Date.now(),
       }),
+    });  //transaction AJAX
+    return response.json();
+  }
+
+  static async deleteOneById(id) {
+    const response = await fetch(this.apiURL + "todos/" + id, {
+      method: "DELETE",
     });  //transaction AJAX
     return response.json();
   }

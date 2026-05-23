@@ -18,7 +18,7 @@ export default class Todo {
     el.append(this.domElt);
   }
 
-
+  //Modifier un élément
   async toggleCompleted() {
     //Modifier dans le tableau
     this.completed = !this.completed;
@@ -31,6 +31,10 @@ export default class Todo {
   initEvents() {
     this.domElt.querySelector('.toggle').addEventListener('change', (e) => {
       this.toggleCompleted();
-    })
+    });
+
+    this.domElt.querySelector('.destroy').addEventListener('click', () => {
+      window.TodoList.deleteOneById(this.id);
+    });
   }
 }
